@@ -34,8 +34,8 @@ public class PlayerController : MonoBehaviour
             Destroy(GetComponentInChildren<Camera>().gameObject);
         }
         isnull = true;
-        dish = GameObject.Find("Cube (1)");
-        dish_tf = dish.GetComponent<Transform>();
+        //dish = GameObject.Find("Cube (1)");
+        //dish_tf = dish.GetComponent<Transform>();
     }
     void Update()
     {
@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
             if (isnull == true)
             {
                 dish = pickup.Finditems(transform);
+                dish_tf = dish.GetComponent<Transform>();
                 if(dish != null)
                 {
                     isnull = false;

@@ -24,7 +24,7 @@ public class PickUp : MonoBehaviour
                 pickup_isnull = false;
                 hand = Vector3.Distance(player.position, item.position);
             }
-        }
+        }/*
         if(pickup_isnull)
         {
             if (checkPot1CanPick(player))
@@ -44,7 +44,7 @@ public class PickUp : MonoBehaviour
                 pickup = pickup_foodbox(player,near_box);
                 pickup_isnull = false;
             }
-        }
+        }*/
         return pickup;
     }
     private bool checkPot1CanPick(Transform player)
