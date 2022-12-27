@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using System.IO;
+using UnityEngine.InputSystem;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -16,16 +17,15 @@ public class PlayerManager : MonoBehaviour
     {
         if (pv.IsMine)
         {
-            CreateController();
+           CreateController();
         }
     }
 
     // Update is called once per frame
-    void CreateController()
+    public void CreateController()
     {
-        PhotonNetwork.Instantiate(Path.Combine("photonprefabs", "PlayerController"), Vector3.zero, Quaternion.identity);
+        PhotonNetwork.Instantiate(Path.Combine("photonprefabs", "PlayerAvatar"), Vector3.zero, Quaternion.identity).GetComponent<PlayerController>();
         //instanstiate our player collecter
 
     }
-
 }
