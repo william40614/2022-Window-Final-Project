@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\Menu.cs" />
     <Compile Include="Assets\Scripts\lanucher.cs" />
     <Compile Include="Assets\Scripts\PlayerListItem.cs" />
+    <Compile Include="Assets\Scripts\PickUp.cs" />
     <Compile Include="Assets\Scripts\IngredientType.cs" />
     <Compile Include="Assets\Scripts\Menumanager.cs" />
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
@@ -95,6 +96,7 @@
     <Compile Include="Assets\CoffeeShopStarterPack\Scripts\ProductWithCover.cs" />
     <Compile Include="Assets\CoffeeShopStarterPack\Scripts\PanGameObject.cs" />
     <Compile Include="Assets\CoffeeShopStarterPack\Scripts\DeleteProductOnSlot.cs" />
+    <Compile Include="Assets\Scripts\GameSceneController.cs" />
     <Compile Include="Assets\Scripts\IngredientStatus.cs" />
     <Compile Include="Assets\CoffeeShopStarterPack\Scripts\HeatableProduct.cs" />
   </ItemGroup>
