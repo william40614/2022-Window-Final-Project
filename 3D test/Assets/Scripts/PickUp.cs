@@ -6,7 +6,7 @@ public class PickUp : MonoBehaviour
 {
     [SerializeField] public GameSceneController gameSceneController;
     [SerializeField] public Transform food;
-    [SerializeField] public Transform box;
+    [SerializeField] public Transform platform;
     [SerializeField] public GameObject pot1, pot2;
     float handlong = 100;
     Animator pot_animator;
@@ -58,10 +58,9 @@ public class PickUp : MonoBehaviour
 
     private bool checkPot1CanPick(Transform player)
     {
-        pot_animator = pot1.GetComponent<Animator>();
         if (Vector3.Distance(player.position,pot1.transform.position) < handlong)
         {
-            if (pot_animator.GetCurrentAnimatorStateInfo(0).IsName("cooked_tomato"))
+            if (pot1.GetComponent<deeppanController>().cook_state == 2)
             {
                 return true;
             }
@@ -74,23 +73,14 @@ public class PickUp : MonoBehaviour
     }
     private GameObject Pickup_Pot1(Transform player)
     {
-        if (pot_animator.GetCurrentAnimatorStateInfo(0).IsName("cooked_tomato"))
-        {
-            gameSceneController.reAnimation(pot_animator);
-            return gameSceneController.newItemInstantiate(player,"tomato_soup");
-        }
-        else
-        {
-            return null;
-            //...
-        }
+        pot1.GetComponent<deeppanController>().cook_state = 0;
+        return gameSceneController.newItemInstantiate(player,pot1.GetComponent<deeppanController>().cooking_food);
     }
     private bool checkPot2CanPick(Transform player)
     {
-        pot_animator = pot2.GetComponent<Animator>();
         if (Vector3.Distance(player.position, pot2.transform.position) < handlong)
         {
-            if (pot_animator.GetCurrentAnimatorStateInfo(0).IsName("cooked_tomato"))
+            if (pot2.GetComponent<deeppanController>().cook_state == 2)
             {
                 return true;
             }
@@ -103,22 +93,14 @@ public class PickUp : MonoBehaviour
     }
     private GameObject Pickup_Pot2(Transform player)
     {
-        if (pot_animator.GetCurrentAnimatorStateInfo(0).IsName("cooked_tomato"))
-        {
-            gameSceneController.reAnimation(pot_animator);
-            return gameSceneController.newItemInstantiate(player, "tomato_soup");
-        }
-        else
-        {
-            return null;
-            //...
-        }
+        pot2.GetComponent<deeppanController>().cook_state = 0;
+        return gameSceneController.newItemInstantiate(player, pot2.GetComponent<deeppanController>().cooking_food);
     }
     private Transform checkFoodBox(Transform player)
     {
         float min = handlong;
         Transform near_box = null ;
-        foreach(Transform boxes in box)
+        foreach(Transform boxes in platform)
         {
             if (Vector3.Distance(player.position,boxes.position) < min)
             {
@@ -140,7 +122,37 @@ public class PickUp : MonoBehaviour
     }
     public void putdown(Transform dish)
     {
+        float hand = handlong;
+        Transform placed = null;
+        foreach (Transform item in platform)
+        {
+            if (Vector3.Distance(dish.position, item.position) < hand)
+            {
+                placed = item;
+                hand = Vector3.Distance(dish.position, item.position);
+            }
+        }
         //¬Ý¯¸¦ì
-        dish.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z + 2);
+        if (hand > 5)
+            dish.position = new Vector3(transform.position.x, (float)(transform.position.y - 0.5), transform.position.z + 2);
+        else
+        {
+            if(placed.gameObject == pot1)
+            {
+                pot1.GetComponent<deeppanController>().cooking_food = dish.name;
+                pot1.GetComponent<deeppanController>().cooking(1);
+            }
+            else if(placed.gameObject == pot2)
+            {
+                pot2.GetComponent<deeppanController>().cooking_food = dish.name;
+                pot2.GetComponent<deeppanController>().cooking(1);
+
+            }
+            else
+            {
+                dish.position = new Vector3(placed.position.x, placed.position.y + 1, placed.position.z);
+            }
+        }
+
     }
 }
