@@ -1,5 +1,9 @@
 sceneSetups:
+<<<<<<< HEAD
+- path: Assets/Scenes/game_kitchen.unity
+=======
 - path: Assets/Scenes/SampleScene.unity
+>>>>>>> 0556c21242e403be71dfae7b6c6b1842b64ecffa
   isLoaded: 1
   isActive: 1
   isSubScene: 0
