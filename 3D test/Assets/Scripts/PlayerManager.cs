@@ -8,6 +8,8 @@ using UnityEngine.InputSystem;
 public class PlayerManager : MonoBehaviour
 {
     PhotonView pv;
+    int number_player;
+    GameObject Manager;
     private void Awake()
     {
         pv = GetComponent<PhotonView>();
@@ -17,15 +19,21 @@ public class PlayerManager : MonoBehaviour
     {
         if (pv.IsMine)
         {
-           CreateController();
+            Manager = GameObject.Find("Manager");
+            CreateController();
         }
     }
 
     // Update is called once per frame
     public void CreateController()
     {
-        PhotonNetwork.Instantiate(Path.Combine("photonprefabs", "PlayerAvatar"), Vector3.zero, Quaternion.identity).GetComponent<PlayerController>();
+        GameObject player =  PhotonNetwork.Instantiate(Path.Combine("photonprefabs", "PlayerAvatar"), Vector3.zero, Quaternion.identity);
+        if(GameObject.Find("player1")!=null)
+            player.name = "player2";
+        else
+            player.name = "player1";
         //instanstiate our player collecter
+        Debug.Log(player.name);
 
     }
 }

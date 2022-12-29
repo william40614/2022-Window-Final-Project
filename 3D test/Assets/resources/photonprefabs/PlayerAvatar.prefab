@@ -312,7 +312,7 @@ MonoBehaviour:
   prefixField: -1
   Synchronization: 3
   OwnershipTransfer: 0
-  observableSearch: 2
+  observableSearch: 0
   ObservedComponents:
   - {fileID: 1773066037207579192}
   sceneViewId: 0
@@ -346,4 +346,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644bf083e34d5c7449c8196bb6ed65a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dish_tf: {fileID: 0}
+  dish_name: 
   cameraholder: {fileID: 1351465979020970517}

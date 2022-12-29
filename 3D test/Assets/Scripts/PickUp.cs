@@ -10,16 +10,24 @@ public class PickUp : MonoBehaviour
     [SerializeField] public GameObject pot1, pot2;
     float handlong = 100;
     Animator pot_animator;
+    GameObject other_player;
     // Start is called before the first frame update
     public GameObject Finditems(Transform player)
     {
         GameObject pickup = null;
         float hand = handlong;
         bool pickup_isnull = true;
-        foreach(Transform item in food)
+        if (player.name == "player1")
+            other_player = GameObject.Find("PlayerAvatar(Clone)");
+        else
+            other_player = GameObject.Find("player1");
+        Debug.Log(other_player.name);
+        foreach (Transform item in food)
         {
             if(Vector3.Distance(player.position,item.position) < hand)
             {
+                if (other_player.GetComponent<PlayerController>().dish_name == item.name)
+                    continue;
                 pickup = item.gameObject;
                 pickup_isnull = false;
                 hand = Vector3.Distance(player.position, item.position);
@@ -47,6 +55,7 @@ public class PickUp : MonoBehaviour
         }*/
         return pickup;
     }
+
     private bool checkPot1CanPick(Transform player)
     {
         pot_animator = pot1.GetComponent<Animator>();
