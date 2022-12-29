@@ -6,6 +6,7 @@ public class GameSceneController : MonoBehaviour
 {
     [SerializeField] public Transform food;
     [SerializeField] public GameObject tomato;
+    public int number_player = 0;
     // Start is called before the first frame update
     public void reAnimation(Animator pot)
     {

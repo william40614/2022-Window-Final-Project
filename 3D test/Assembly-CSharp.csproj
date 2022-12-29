@@ -137,6 +137,8 @@
     <Compile Include="Assets\Scripts\IngredientStatus.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\CoffeeShopStarterPack\Scripts\HeatableProduct.cs" />
+    <Compile Include="Assets\Is_Picked.cs" />
+    <Compile Include="Assets\foodController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
