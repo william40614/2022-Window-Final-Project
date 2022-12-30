@@ -385,12 +385,12 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.TestRunner.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UDP.Editor.IETASM.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
-"Assets/CoffeeShopStarterPack/Scripts/Editor/BewerageMakerEditor.cs"
-"Assets/CoffeeShopStarterPack/Scripts/Editor/ProductEditor.cs"
-"Assets/CoffeeShopStarterPack/Scripts/Editor/ProductManagerEditor.cs"
-"Assets/CoffeeShopStarterPack/Scripts/Editor/ScreenShotHelperEditor.cs"
-"Assets/CoffeeShopStarterPack/Scripts/Editor/ScreenShotImportSettings.cs"
-"Assets/CoffeeShopStarterPack/Scripts/Editor/SliceHelperEditor.cs"
+"Assets/Import Sources/CoffeeShopStarterPack/Scripts/Editor/BewerageMakerEditor.cs"
+"Assets/Import Sources/CoffeeShopStarterPack/Scripts/Editor/ProductEditor.cs"
+"Assets/Import Sources/CoffeeShopStarterPack/Scripts/Editor/ProductManagerEditor.cs"
+"Assets/Import Sources/CoffeeShopStarterPack/Scripts/Editor/ScreenShotHelperEditor.cs"
+"Assets/Import Sources/CoffeeShopStarterPack/Scripts/Editor/ScreenShotImportSettings.cs"
+"Assets/Import Sources/CoffeeShopStarterPack/Scripts/Editor/SliceHelperEditor.cs"
 -langversion:9.0
 
 /deterministic
