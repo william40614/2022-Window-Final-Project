@@ -127,13 +127,8 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\Scripts\IPickable.cs" />
     <Compile Include="Assets\Scripts\InputController.cs" />
-<<<<<<< HEAD
     <Compile Include="Assets\Import Sources\CoffeeShopStarterPack\Scripts\ProductWithCover.cs" />
     <Compile Include="Assets\Import Sources\CoffeeShopStarterPack\Scripts\PanGameObject.cs" />
-=======
-    <Compile Include="Assets\CoffeeShopStarterPack\Scripts\ProductWithCover.cs" />
-    <Compile Include="Assets\CoffeeShopStarterPack\Scripts\PanGameObject.cs" />
->>>>>>> dced7b5bcb0e08a12757d9b4d577ef9239ee6509
     <Compile Include="Assets\Scripts\deeppanController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
@@ -144,11 +139,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Scripts\IngredientStatus.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-<<<<<<< HEAD
     <Compile Include="Assets\Import Sources\CoffeeShopStarterPack\Scripts\HeatableProduct.cs" />
-=======
-    <Compile Include="Assets\CoffeeShopStarterPack\Scripts\HeatableProduct.cs" />
->>>>>>> dced7b5bcb0e08a12757d9b4d577ef9239ee6509
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

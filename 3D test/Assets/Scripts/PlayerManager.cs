@@ -27,7 +27,7 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     public void CreateController()
     {
-        GameObject player =  PhotonNetwork.Instantiate(Path.Combine("photonprefabs", "PlayerAvatar"), Vector3.zero, Quaternion.identity);
+        GameObject player =  PhotonNetwork.Instantiate(Path.Combine("photonprefabs", "PlayerAvatarZ"), Vector3.zero, Quaternion.identity);
         if(GameObject.Find("player1")!=null)
             player.name = "player2";
         else
