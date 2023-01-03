@@ -13,6 +13,8 @@ public class PlayerManager : MonoBehaviour
     private void Awake()
     {
         pv = GetComponent<PhotonView>();
+      
+
     }
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,7 @@ public class PlayerManager : MonoBehaviour
             Manager = GameObject.Find("Manager");
             CreateController();
         }
+        
     }
 
     // Update is called once per frame
@@ -34,6 +37,8 @@ public class PlayerManager : MonoBehaviour
             player.name = "player1";
         //instanstiate our player collecter
         Debug.Log(player.name);
+        //add initial position
+        player.transform.position = new Vector3((float)9.29, 0, (float)18.01606);
 
     }
 }
