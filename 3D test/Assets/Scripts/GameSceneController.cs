@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class GameSceneController : MonoBehaviour
@@ -14,8 +15,9 @@ public class GameSceneController : MonoBehaviour
     }
     public GameObject newItemInstantiate(Transform player, string _string)
     {
+        Debug.Log(_string);
         GameObject newItem;
-        newItem = Instantiate(tomato, player.position, new Quaternion(0, 0, 0, 0),food);
+        newItem = Instantiate(GameObject.Find(_string), player.position, new Quaternion(0, 0, 0, 0),food); 
         return newItem;
     }
 }

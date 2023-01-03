@@ -21,7 +21,7 @@ public class deeppanController : MonoBehaviour
         }
         else if (_state == 2)
         {
-            cooking_food = cooking_food + "soup";
+            cooking_food = "PW_lemonade";
         }
         else
         {
@@ -42,6 +42,7 @@ public class deeppanController : MonoBehaviour
                 UI.sizeDelta = new Vector2(1.5F, UI.sizeDelta.y);
                 UI.gameObject.active = false;
                 cook_state = 2;
+                cooking(2);
                 anima = 0;
             }
         }

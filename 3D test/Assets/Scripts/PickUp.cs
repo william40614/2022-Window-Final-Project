@@ -18,41 +18,39 @@ public class PickUp : MonoBehaviour
         float hand = handlong;
         bool pickup_isnull = true;
         if (player.name == "player1")
-            other_player = GameObject.Find("PlayerAvatar(Clone)");
+            other_player = GameObject.Find("PlayerAvatarZ(Clone)");
         else
             other_player = GameObject.Find("player1");
-        Debug.Log(other_player.name);
+        //Debug.Log(other_player.name);
         foreach (Transform item in food)
         {
             if (Vector3.Distance(player.position, item.position) < hand)
             {
-                if (other_player.GetComponent<PlayerController>().dish_name == item.name)
+                if (other_player!=null &&  other_player.GetComponent<PlayerController>().dish_name == item.name)
                     continue;
                 pickup = item.gameObject;
                 pickup_isnull = false;
                 hand = Vector3.Distance(player.position, item.position);
             }
         }
-        if (pickup_isnull)
-        {
-            if (checkPot1CanPick(player))
+        Debug.Log(hand);
+            if (checkPot1CanPick(player) && hand > Vector3.Distance(pot1.transform.position, player.position))
             {
                 pickup = Pickup_Pot1(player);
                 pickup_isnull = false;
             }
-            else if (checkPot2CanPick(player))
+           /* else if (checkPot2CanPick(player) && hand > Vector3.Distance(pot2.transform.position, player.position))
             {
                 pickup = Pickup_Pot2(player);
                 pickup_isnull = false;
-            }
+            }*/
             Transform near_box = null;
-            near_box = checkFoodBox(player);
-            if (near_box != null && pickup_isnull)
+            /*near_box = checkFoodBox(player);
+            if (near_box != null && hand > Vector3.Distance(near_box.position, player.position))
             {
                 pickup = pickup_foodbox(player, near_box);
                 pickup_isnull = false;
-            }
-        }
+            }*/
         return pickup;
     }
 
@@ -65,8 +63,10 @@ public class PickUp : MonoBehaviour
     }
     private GameObject Pickup_Pot1(Transform player)
     {
+        GameObject cooked_food =  gameSceneController.newItemInstantiate(player, pot1.GetComponent<deeppanController>().cooking_food);
         pot1.GetComponent<deeppanController>().cook_state = 0;
-        return gameSceneController.newItemInstantiate(player, pot1.GetComponent<deeppanController>().cooking_food);
+        pot1.GetComponent<deeppanController>().cooking(0);
+        return cooked_food;
     }
     private bool checkPot2CanPick(Transform player)
     {
@@ -78,6 +78,7 @@ public class PickUp : MonoBehaviour
     private GameObject Pickup_Pot2(Transform player)
     {
         pot2.GetComponent<deeppanController>().cook_state = 0;
+        pot2.GetComponent<deeppanController>().cooking(0);
         return gameSceneController.newItemInstantiate(player, pot2.GetComponent<deeppanController>().cooking_food);
     }
     private Transform checkFoodBox(Transform player)
@@ -123,11 +124,13 @@ public class PickUp : MonoBehaviour
             {
                 pot1.GetComponent<deeppanController>().cooking_food = dish.name;
                 pot1.GetComponent<deeppanController>().cooking(1);
+                Destroy(dish.gameObject);
             }
             else if (placed.gameObject == pot2)
             {
                 pot2.GetComponent<deeppanController>().cooking_food = dish.name;
                 pot2.GetComponent<deeppanController>().cooking(1);
+                Destroy(dish.gameObject);
             }
             else
                 dish.position = new Vector3(placed.position.x, placed.position.y + 1, placed.position.z);

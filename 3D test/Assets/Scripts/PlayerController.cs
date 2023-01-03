@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     Rigidbody rb;
     PhotonView PV;
     float smoothTime , verticalLookRotation;
-    float movingspeed = 3f, runspeed = 5f, mouseSensitivity = 30;
+    float movingspeed = 10f, runspeed = 5f, mouseSensitivity = 30;
     Vector3 moveAmount,smoothMoveVelocity;
     bool grouneded;
     bool isnull;
@@ -44,11 +44,76 @@ public class PlayerController : MonoBehaviourPunCallbacks
     }
     void Update()
     {
+        float yVelocity = 0.0F;
         if (!PV.IsMine)
             return;
+        /*float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
+        rb.MovePosition(this.transform.position + new Vector3(h, 0, v) * movingspeed * Time.deltaTime);
+        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+        {
+            Vector3 targetDirection = new Vector3(h, 0f, v);
+            Quaternion targetRotation = Quaternion.LookRotation(targetDirection, Vector3.up); 
+            Quaternion newRotation = Quaternion.Lerp(rb.rotation, targetRotation, movingspeed * Time.deltaTime);
+            rb.MoveRotation(newRotation);
+        }*/
+        /*if (Input.GetKeyDown(KeyCode.A))
+        {
+            transform.eulerAngles = new Vector3(0, 270, 0);
+            transform.position = new Vector3(transform.position.x+ movingspeed, transform.position.y, transform.position.z);
+        }
+        else if(Input.GetKeyDown(KeyCode.W))
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        else if (Input.GetKeyDown(KeyCode.S))
+            transform.eulerAngles = new Vector3(0,180, 0);
+        else if (Input.GetKeyDown(KeyCode.D))
+            transform.eulerAngles = new Vector3(0,90, 0);*/
         //move
-        Vector3 moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
-        moveAmount = Vector3.SmoothDamp(moveAmount, moveDir * (Input.GetKey(KeyCode.LeftShift) ? movingspeed : runspeed ), ref smoothMoveVelocity, smoothTime);
+        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
+        {
+            transform.localRotation = Quaternion.Euler(0, -45, 0);
+            transform.Translate(new Vector3(-1, 0, 1) * movingspeed * Time.deltaTime, Space.World);
+        }
+        else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
+        {
+            transform.localRotation = Quaternion.Euler(0, 45, 0);
+            transform.Translate(new Vector3(1, 0, 1) * movingspeed * Time.deltaTime, Space.World);
+        }
+        else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
+        {
+            transform.localRotation = Quaternion.Euler(0, -135, 0);
+            transform.Translate(new Vector3(-1, 0, -1) * movingspeed * Time.deltaTime, Space.World);
+        }
+        else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
+        {
+            transform.localRotation = Quaternion.Euler(0, 135, 0);
+            transform.Translate(new Vector3(1, 0, -1) * movingspeed * Time.deltaTime, Space.World);
+        }
+        else
+        {
+            if (Input.GetKey(KeyCode.W))
+            {
+                transform.localRotation = Quaternion.Euler(0, 0, 0);
+                transform.Translate(Vector3.forward * movingspeed * Time.deltaTime, Space.World);
+            }
+            else if (Input.GetKey(KeyCode.S))
+            {
+                transform.localRotation = Quaternion.Euler(0, 180, 0);
+                transform.Translate(Vector3.back * movingspeed * Time.deltaTime, Space.World);
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                transform.localRotation = Quaternion.Euler(0, -90, 0);
+                transform.Translate(Vector3.left * movingspeed * Time.deltaTime, Space.World);
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                transform.localRotation = Quaternion.Euler(0, 90, 0);
+                transform.Translate(Vector3.right * movingspeed * Time.deltaTime, Space.World);
+            }
+        }
+        //Vector3 moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
+        //moveAmount = Vector3.SmoothDamp(moveAmount, moveDir * (Input.GetKey(KeyCode.LeftShift) ? movingspeed : runspeed ), ref smoothMoveVelocity, smoothTime);
         //pickUP
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -111,7 +176,8 @@ public class PlayerController : MonoBehaviourPunCallbacks
     {
         if (!PV.IsMine)
             return;
-        rb.MovePosition(rb.position + transform.TransformDirection(moveAmount) * Time.fixedDeltaTime);
+        //rb.MovePosition(rb.position + transform.TransformDirection(moveAmount) * Time.fixedDeltaTime);
+        
     }
 
 
