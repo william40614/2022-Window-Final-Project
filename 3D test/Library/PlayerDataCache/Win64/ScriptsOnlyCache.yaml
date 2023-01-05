@@ -10,10 +10,13 @@ ScriptsOnlyBuild:
     - PlayerController
     - PlayerListItem
     - PlayerManager
+    - QuitGame
     - RoomListItem
     - RoomManager
+    - deeppanController
     - foodController
     - lanucher
+    - move
     PhotonUnityNetworking.Editor.dll:
     - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
@@ -124,59 +127,6 @@ ScriptsOnlyBuild:
     fullTypeName: lanucher
     methodName: StartGame
   sceneClasses:
-    Assets/Scenes/Game.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
-    - Class: 23
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 33
-      Script: {instanceID: 0}
-    - Class: 43
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 54
-      Script: {instanceID: 0}
-    - Class: 65
-      Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
-    - Class: 89
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 108
-      Script: {instanceID: 0}
-    - Class: 114
-      Script: {instanceID: 1626}
-    - Class: 114
-      Script: {instanceID: 2856}
-    - Class: 114
-      Script: {instanceID: 3356}
-    - Class: 114
-      Script: {instanceID: 4076}
-    - Class: 114
-      Script: {instanceID: 4226}
-    - Class: 114
-      Script: {instanceID: 8718}
-    - Class: 114
-      Script: {instanceID: 8944}
-    - Class: 114
-      Script: {instanceID: 9076}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 196
-      Script: {instanceID: 0}
     Assets/Scenes/SampleScene.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -200,9 +150,15 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 54
       Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 89
+      Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -221,6 +177,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2330}
     - Class: 114
+      Script: {instanceID: 2856}
+    - Class: 114
       Script: {instanceID: 2868}
     - Class: 114
       Script: {instanceID: 3114}
@@ -234,6 +192,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 3652}
     - Class: 114
       Script: {instanceID: 3768}
+    - Class: 114
+      Script: {instanceID: 4076}
     - Class: 114
       Script: {instanceID: 4226}
     - Class: 114
@@ -265,9 +225,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 8718}
     - Class: 114
-      Script: {instanceID: 8944}
+      Script: {instanceID: 8946}
     - Class: 114
-      Script: {instanceID: 9094}
+      Script: {instanceID: 9078}
+    - Class: 114
+      Script: {instanceID: 9096}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -275,6 +237,8 @@ ScriptsOnlyBuild:
     - Class: 135
       Script: {instanceID: 0}
     - Class: 136
+      Script: {instanceID: 0}
+    - Class: 137
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -287,6 +251,83 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/game_kitchen.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1566}
+    - Class: 114
+      Script: {instanceID: 2264}
+    - Class: 114
+      Script: {instanceID: 2856}
+    - Class: 114
+      Script: {instanceID: 3356}
+    - Class: 114
+      Script: {instanceID: 4076}
+    - Class: 114
+      Script: {instanceID: 6506}
+    - Class: 114
+      Script: {instanceID: 8820}
+    - Class: 114
+      Script: {instanceID: 8946}
+    - Class: 114
+      Script: {instanceID: 9078}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 137
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 258
+      Script: {instanceID: 0}
+    - Class: 850595691
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -837,7 +878,7 @@ ScriptsOnlyBuild:
     className: UnityOnCollisionExit2DMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 9fd8fd607cf1d722403df6e40b65dd8e
+      Hash: 9ff414c3831f11e699ba75bbd2c8b318
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PickUp
@@ -1785,6 +1826,12 @@ ScriptsOnlyBuild:
     className: EventSystemSpawner
   - hash:
       serializedVersion: 2
+      Hash: cf68576c69007ada8725bede469ca387
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: deeppanController
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
@@ -1966,6 +2013,6 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  - Assets/Scenes/Game.unity
-  playerPath: D:/unityyy/class1/2022/2022-Window-Final-Project/3D test/build_Scene/3D
-    test.exe
+  - Assets/Scenes/game_kitchen.unity
+  playerPath: D:/Unity/workplace/3Dtest/githubproject/2022-Window-Final-Project/3D
+    test/Build/3D test.exe

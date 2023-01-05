@@ -73,21 +73,29 @@ public class PlayerController : MonoBehaviourPunCallbacks
         {
             transform.localRotation = Quaternion.Euler(0, -45, 0);
             transform.Translate(new Vector3(-1, 0, 1) * movingspeed * Time.deltaTime, Space.World);
+            if (dish_tf != null)
+                dish_tf.position = new Vector3(transform.position.x - 1, transform.position.y + 1, transform.position.z + 1);
         }
         else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
         {
             transform.localRotation = Quaternion.Euler(0, 45, 0);
             transform.Translate(new Vector3(1, 0, 1) * movingspeed * Time.deltaTime, Space.World);
+            if (dish_tf != null)
+                dish_tf.position = new Vector3(transform.position.x + 1, transform.position.y + 1, transform.position.z + 1);
         }
         else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
         {
             transform.localRotation = Quaternion.Euler(0, -135, 0);
             transform.Translate(new Vector3(-1, 0, -1) * movingspeed * Time.deltaTime, Space.World);
+            if (dish_tf != null)
+                dish_tf.position = new Vector3(transform.position.x - 1, transform.position.y + 1, transform.position.z - 1);
         }
         else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
         {
             transform.localRotation = Quaternion.Euler(0, 135, 0);
             transform.Translate(new Vector3(1, 0, -1) * movingspeed * Time.deltaTime, Space.World);
+            if (dish_tf != null)
+                dish_tf.position = new Vector3(transform.position.x + 1, transform.position.y + 1, transform.position.z - 1);
         }
         else
         {
@@ -95,21 +103,29 @@ public class PlayerController : MonoBehaviourPunCallbacks
             {
                 transform.localRotation = Quaternion.Euler(0, 0, 0);
                 transform.Translate(Vector3.forward * movingspeed * Time.deltaTime, Space.World);
+                if (dish_tf != null)
+                    dish_tf.position = new Vector3(transform.position.x , transform.position.y + 1, transform.position.z  + 1);
             }
             else if (Input.GetKey(KeyCode.S))
             {
                 transform.localRotation = Quaternion.Euler(0, 180, 0);
                 transform.Translate(Vector3.back * movingspeed * Time.deltaTime, Space.World);
+                if (dish_tf != null)
+                    dish_tf.position = new Vector3(transform.position.x , transform.position.y + 1, transform.position.z - 1);
             }
             else if (Input.GetKey(KeyCode.A))
             {
                 transform.localRotation = Quaternion.Euler(0, -90, 0);
                 transform.Translate(Vector3.left * movingspeed * Time.deltaTime, Space.World);
+                if (dish_tf != null)
+                    dish_tf.position = new Vector3(transform.position.x - 1 , transform.position.y + 1, transform.position.z );
             }
             else if (Input.GetKey(KeyCode.D))
             {
                 transform.localRotation = Quaternion.Euler(0, 90, 0);
                 transform.Translate(Vector3.right * movingspeed * Time.deltaTime, Space.World);
+                if(dish_tf != null)
+                    dish_tf.position = new Vector3(transform.position.x + 1, transform.position.y + 1, transform.position.z);
             }
         }
         //Vector3 moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
@@ -146,10 +162,10 @@ public class PlayerController : MonoBehaviourPunCallbacks
                 hash_clear.Clear();
             }
         }
-        if (isnull == false && dish_tf != null)
+        /*if (isnull == false && dish_tf != null)
         {
             dish_tf.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z + 2);
-        }
+        }*/
         //float x = mouseSensitivity * Input.GetAxis("Mouse X");
         
         cameraholder.transform.rotation = Quaternion.Euler(45, 0, 0);
