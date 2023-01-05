@@ -8,7 +8,7 @@ public class PickUp : MonoBehaviour
     [SerializeField] public Transform food;
     [SerializeField] public Transform platform;
     [SerializeField] public GameObject pot1, pot2;
-    float handlong = 3;
+    float handlong = 2;
     Animator pot_animator;
     GameObject other_player;
     // Start is called before the first frame update
@@ -116,7 +116,7 @@ public class PickUp : MonoBehaviour
             }
         }
         //¬Ý¯¸¦ì
-        if (hand >= 3)
+        if (hand >= handlong)
             dish.position = new Vector3(dish.position.x, (float)(dish.position.y - 0.5), dish.position.z);
         else
         {
