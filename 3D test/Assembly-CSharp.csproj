@@ -73,6 +73,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Scripts\IngredientData.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
+    <Compile Include="Assets\Scenes\music_menu.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\Import Sources\CoffeeShopStarterPack\Scripts\Utilities\BasicGameEvents.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="Assets\Import Sources\CoffeeShopStarterPack\Scripts\BewerageMaker.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\Scripts\InteractableController.cs" />
+    <Compile Include="Assets\Scenes\music_game.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\move.cs" />
     <Compile Include="Assets\Import Sources\CoffeeShopStarterPack\Scripts\ProductType.cs" />
@@ -140,8 +142,8 @@
     <Compile Include="Assets\Scripts\IngredientStatus.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Import Sources\CoffeeShopStarterPack\Scripts\HeatableProduct.cs" />
-    <Compile Include="Assets\Scenes\music_game.cs" />
-    <Compile Include="Assets\Scenes\music_menu.cs" />
+    <Compile Include="Assets\Scenes\dialogue_box.cs" />
+    <Compile Include="Assets\Scenes\aboutGame.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

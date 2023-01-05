@@ -133,11 +133,11 @@ public class PickUp : MonoBehaviour
             if (placed.gameObject == pot1)
             {
                 if (dish.name == "Apple")
-                    dish.transform.localPosition = new Vector3((float)-6.474, (float)-3.68, (float)21.29);
+                    dish.transform.localPosition = new Vector3((float)-3.61, (float)-3.68, (float)21.29);
                 else if (dish.name == "Lemon")
-                    dish.transform.localPosition = new Vector3((float)-6.81, (float)-3.69, (float)20.31);
+                    dish.transform.localPosition = new Vector3((float)-1.576, (float)-3.69, (float)21.289);
                 else if (dish.name == "WaterMElon")
-                    dish.transform.localPosition = new Vector3((float)-6.77, (float)-3.53, (float)19.17);
+                    dish.transform.localPosition = new Vector3((float)-6.77, (float)-3.53, (float)20.01);
                 pot1.GetComponent<deeppanController>().cooking_food = dish.name;
                 pot1.GetComponent<deeppanController>().cooking(1);
                 

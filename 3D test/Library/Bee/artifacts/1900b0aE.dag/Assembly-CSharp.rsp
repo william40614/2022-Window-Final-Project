@@ -404,6 +404,8 @@
 "Assets/Photon/PhotonLibs/WebSocket/SocketWebTcp.cs"
 "Assets/Photon/PhotonLibs/WebSocket/WebSocket.cs"
 "Assets/QuitGame.cs"
+"Assets/Scenes/aboutGame.cs"
+"Assets/Scenes/dialogue_box.cs"
 "Assets/Scenes/music_game.cs"
 "Assets/Scenes/music_menu.cs"
 "Assets/Scripts/deeppanController.cs"

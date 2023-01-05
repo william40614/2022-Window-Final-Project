@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//control music with button
+
 public class music_game : MonoBehaviour
 {
     

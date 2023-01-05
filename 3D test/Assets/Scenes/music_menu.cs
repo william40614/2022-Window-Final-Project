@@ -10,6 +10,7 @@ public class music_menu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //play music when game is started
         audioSource.Play();
     }
 
