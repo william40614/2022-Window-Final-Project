@@ -13,7 +13,7 @@ public class GameSceneController : MonoBehaviour
     [SerializeField] public GameObject menu;
     TMP_Text timer;
     PhotonView PV;
-    int t_seconds , t_min = 1, t_sec = 0;
+    int t_seconds , t_min = 2, t_sec = 0;
     public int sroce = 0;
     // Start is called before the first frame update
     private void Start()
@@ -38,11 +38,11 @@ public class GameSceneController : MonoBehaviour
     {
         sroce++;
         TMP.SetText(sroce.ToString());
-        if (sroce == 1)
+        /*if (sroce == 10)
         {
             menu.active = true;
             menu.transform.GetChild(0).gameObject.active = true;
-        }
+        }*/
     }
 
     public void exitgame()
@@ -72,6 +72,7 @@ public class GameSceneController : MonoBehaviour
         yield return new WaitForSeconds(1);
         menu.active = true;
         menu.transform.GetChild(1).gameObject.active = true;
+        menu.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = string.Format("your sroce :{0}",sroce.ToString());
         Time.timeScale = 0;
     }
 }

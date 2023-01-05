@@ -13,10 +13,12 @@ public class deeppanController : MonoBehaviour
     [SerializeField] RectTransform UI;
     public void cooking(int _state)
     {
+        //if (anima == 1)
+        //    return;
         PV = GetComponent<PhotonView>();
         if (!PV.IsMine)
             return;
-        if (_state == 1)
+        if (_state == 1 )
         {
             cook_state = _state;
             //鍋蓋出現，跑UI後cook_state = 2
@@ -26,9 +28,14 @@ public class deeppanController : MonoBehaviour
         }
         else if (_state == 2)
         {
-            cooking_food = "PW_lemonade";
+            if (cooking_food == "Apple")
+                cooking_food = "PW_orangejuice";
+            else if (cooking_food == "Lemon")
+                cooking_food = "PW_lemonade";
+            else if (cooking_food == "WaterMElon")
+                cooking_food = "PW_tea_cup01";
         }
-        else
+        else if(_state == 0)
         {
             //鍋蓋消失
             lid.active = false;
@@ -40,8 +47,10 @@ public class deeppanController : MonoBehaviour
         PV = GetComponent<PhotonView>();
         if (!PV.IsMine)
             return;
+        //UI.parent.gameObject.active = false;
         if (anima == 1)
         {
+            UI.parent.gameObject.active = true;
             float HP = UI.sizeDelta.x, value = 0.001F;
             float currentHealth = HP - value;
             UI.sizeDelta = new Vector2(currentHealth,UI.sizeDelta.y);

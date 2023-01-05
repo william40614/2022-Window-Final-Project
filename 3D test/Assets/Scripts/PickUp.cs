@@ -132,9 +132,15 @@ public class PickUp : MonoBehaviour
         {
             if (placed.gameObject == pot1)
             {
+                if (dish.name == "Apple")
+                    dish.transform.localPosition = new Vector3((float)-6.474, (float)-3.68, (float)21.29);
+                else if (dish.name == "Lemon")
+                    dish.transform.localPosition = new Vector3((float)-6.81, (float)-3.69, (float)20.31);
+                else if (dish.name == "WaterMElon")
+                    dish.transform.localPosition = new Vector3((float)-6.77, (float)-3.53, (float)19.17);
                 pot1.GetComponent<deeppanController>().cooking_food = dish.name;
                 pot1.GetComponent<deeppanController>().cooking(1);
-                dish.transform.position = Vector3.zero;
+                
             }
             else if (placed.gameObject == pot2)
             {
@@ -145,7 +151,7 @@ public class PickUp : MonoBehaviour
             else
                 dish.position = new Vector3(placed.position.x, placed.position.y + (float)1.2, placed.position.z);
         }
-        if (dish.name == "PW_lemonade")
+        if (dish.name == "PW_lemonade" || dish.name == "PW_orangejuice" || dish.name == "PW_tea_cup01")
         {
             if (placed !=null && (placed.gameObject.name == "table" || placed.gameObject.name == "table (1)" || placed.gameObject.name == "long_table"))
             {
