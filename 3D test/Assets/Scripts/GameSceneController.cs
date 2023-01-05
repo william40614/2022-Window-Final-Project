@@ -16,8 +16,9 @@ public class GameSceneController : MonoBehaviour
     public GameObject newItemInstantiate(Transform player, string _string)
     {
         Debug.Log(_string);
-        GameObject newItem;
-        newItem = Instantiate(GameObject.Find(_string), player.position, new Quaternion(0, 0, 0, 0),food); 
+        GameObject newItem ;
+        newItem = GameObject.Find(_string);
+        newItem.transform.position = player.position;
         return newItem;
     }
 }
