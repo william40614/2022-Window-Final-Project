@@ -8,7 +8,7 @@ public class PickUp : MonoBehaviour
     [SerializeField] public Transform food;
     [SerializeField] public Transform platform;
     [SerializeField] public GameObject pot1, pot2;
-    float handlong = 100;
+    float handlong = 3;
     Animator pot_animator;
     GameObject other_player;
     // Start is called before the first frame update
@@ -116,28 +116,28 @@ public class PickUp : MonoBehaviour
             }
         }
         //¬Ý¯¸¦ì
-        if (hand > 3)
-            dish.position = new Vector3(transform.position.x, (float)(transform.position.y - 0.5), transform.position.z + 2);
+        if (hand >= 3)
+            dish.position = new Vector3(dish.position.x, (float)(dish.position.y - 0.5), dish.position.z);
         else
         {
             if (placed.gameObject == pot1)
             {
                 pot1.GetComponent<deeppanController>().cooking_food = dish.name;
                 pot1.GetComponent<deeppanController>().cooking(1);
-                Destroy(dish.gameObject);
+                dish.transform.position = Vector3.zero;
             }
             else if (placed.gameObject == pot2)
             {
                 pot2.GetComponent<deeppanController>().cooking_food = dish.name;
                 pot2.GetComponent<deeppanController>().cooking(1);
-                Destroy(dish.gameObject);
+                dish.transform.position = Vector3.zero;
             }
             else
-                dish.position = new Vector3(placed.position.x, placed.position.y + 1, placed.position.z);
+                dish.position = new Vector3(placed.position.x, placed.position.y + (float)1.2, placed.position.z);
         }
-        if (dish != null)
+        if (dish.name == "PW_lemonade")
         {
-            if (placed.gameObject.name == "table" || placed.gameObject.name == "table (1)" || placed.gameObject.name == "long_table")
+            if (placed !=null && (placed.gameObject.name == "table" || placed.gameObject.name == "table (1)" || placed.gameObject.name == "long_table"))
             {
                 dish.position = Vector3.zero;
                 GetComponent<GameSceneController>().sroceplus();
