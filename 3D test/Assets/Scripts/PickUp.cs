@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,9 @@ public class PickUp : MonoBehaviour
     // Start is called before the first frame update
     public GameObject Finditems(Transform player)
     {
+        PhotonView PV = player.GetComponent<PhotonView>();
+        if (!PV.IsMine)
+            return null;
         GameObject pickup = null;
         float hand = handlong;
         bool pickup_isnull = true;
@@ -105,6 +109,12 @@ public class PickUp : MonoBehaviour
     }
     public void putdown(Transform dish)
     {
+        PhotonView PV = dish.GetComponent<PhotonView>();
+        if (!PV.IsMine)
+        {
+            Destroy(dish.gameObject);
+            return;
+        }
         float hand = handlong;
         Transform placed = null;
         foreach (Transform item in platform)

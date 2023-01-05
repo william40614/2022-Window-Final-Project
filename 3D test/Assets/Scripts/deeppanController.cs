@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,10 +8,14 @@ public class deeppanController : MonoBehaviour
     // Start is called before the first frame update
     public string cooking_food = "";
     public int cook_state = 0, anima = 0;
+    PhotonView PV;
     [SerializeField] GameObject lid;
     [SerializeField] RectTransform UI;
     public void cooking(int _state)
     {
+        PV = GetComponent<PhotonView>();
+        if (!PV.IsMine)
+            return;
         if (_state == 1)
         {
             cook_state = _state;
@@ -32,6 +37,9 @@ public class deeppanController : MonoBehaviour
     }
     private void Update()
     {
+        PV = GetComponent<PhotonView>();
+        if (!PV.IsMine)
+            return;
         if (anima == 1)
         {
             float HP = UI.sizeDelta.x, value = 0.001F;

@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviourPunCallbacks
     void Awake()
     {
         PV = GetComponent<PhotonView>();
+        if (!PV.IsMine)
+            return;
         rb = GetComponent<Rigidbody>();
         Manager = GameObject.Find("Manager");
         pickup = Manager.GetComponent<PickUp>();
@@ -46,28 +48,10 @@ public class PlayerController : MonoBehaviourPunCallbacks
     {
         float yVelocity = 0.0F;
         if (!PV.IsMine)
+        {
             return;
-        /*float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
-        rb.MovePosition(this.transform.position + new Vector3(h, 0, v) * movingspeed * Time.deltaTime);
-        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
-        {
-            Vector3 targetDirection = new Vector3(h, 0f, v);
-            Quaternion targetRotation = Quaternion.LookRotation(targetDirection, Vector3.up); 
-            Quaternion newRotation = Quaternion.Lerp(rb.rotation, targetRotation, movingspeed * Time.deltaTime);
-            rb.MoveRotation(newRotation);
-        }*/
-        /*if (Input.GetKeyDown(KeyCode.A))
-        {
-            transform.eulerAngles = new Vector3(0, 270, 0);
-            transform.position = new Vector3(transform.position.x+ movingspeed, transform.position.y, transform.position.z);
         }
-        else if(Input.GetKeyDown(KeyCode.W))
-            transform.eulerAngles = new Vector3(0, 0, 0);
-        else if (Input.GetKeyDown(KeyCode.S))
-            transform.eulerAngles = new Vector3(0,180, 0);
-        else if (Input.GetKeyDown(KeyCode.D))
-            transform.eulerAngles = new Vector3(0,90, 0);*/
+        
         //move
         if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
         {
@@ -128,8 +112,6 @@ public class PlayerController : MonoBehaviourPunCallbacks
                     dish_tf.position = new Vector3(transform.position.x + 1, transform.position.y + 1, transform.position.z);
             }
         }
-        //Vector3 moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
-        //moveAmount = Vector3.SmoothDamp(moveAmount, moveDir * (Input.GetKey(KeyCode.LeftShift) ? movingspeed : runspeed ), ref smoothMoveVelocity, smoothTime);
         //pickUP
         if (Input.GetKeyDown(KeyCode.Space))
         {

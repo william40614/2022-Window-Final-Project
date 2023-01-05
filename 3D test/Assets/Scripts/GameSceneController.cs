@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -11,11 +12,13 @@ public class GameSceneController : MonoBehaviour
     [SerializeField] public TMP_Text TMP;
     [SerializeField] public GameObject menu;
     TMP_Text timer;
+    PhotonView PV;
     int t_seconds , t_min = 1, t_sec = 0;
     public int sroce = 0;
     // Start is called before the first frame update
     private void Start()
     {
+        PV = GetComponent<PhotonView>();
         TMP = GameObject.Find("Canvas").transform.GetChild(0).gameObject.GetComponent<TMP_Text>();
         TMP.SetText(sroce.ToString());
         timer = GameObject.Find("Canvas").transform.GetChild(1).gameObject.GetComponent<TMP_Text>();
@@ -23,6 +26,8 @@ public class GameSceneController : MonoBehaviour
     }
     public GameObject newItemInstantiate(Transform player, string _string)
     {
+        if (!PV.IsMine)
+            return null;
         Debug.Log(_string);
         GameObject newItem ;
         newItem = GameObject.Find(_string);
@@ -31,6 +36,8 @@ public class GameSceneController : MonoBehaviour
     }
     public void sroceplus()
     {
+        if (!PV.IsMine)
+            return ;
         sroce++;
         TMP.SetText(sroce.ToString());
         if (sroce == 1)

@@ -6,7 +6,7 @@ using UnityEngine;
 public class foodController : MonoBehaviour
 {
     // Start is called before the first frame update
-    void FixedUpdate()
+    void Update()
     {
         PhotonView PV = GetComponent<PhotonView>();
         Rigidbody rb = GetComponent<Rigidbody>();
