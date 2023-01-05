@@ -135,5 +135,13 @@ public class PickUp : MonoBehaviour
             else
                 dish.position = new Vector3(placed.position.x, placed.position.y + 1, placed.position.z);
         }
+        if (dish != null)
+        {
+            if (placed.gameObject.name == "table" || placed.gameObject.name == "table (1)" || placed.gameObject.name == "long_table")
+            {
+                dish.position = Vector3.zero;
+                GetComponent<GameSceneController>().sroceplus();
+            }
+        }
     }
 }

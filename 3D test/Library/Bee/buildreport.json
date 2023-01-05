@@ -1,0 +1,22 @@
+{
+"instructions_readme": "1) Open Chrome, 2) go to chrome://tracing, 3) click Load, 4) navigate to this file.",
+
+"traceEvents":[
+{ "pid": "Unity", "ph":"M", "name": "process_name", "args": {"name": "Unity"} },
+{ "pid": "Unity", "ph":"M", "name": "process_sort_index", "args": {"sort_index": -100} },
+{ "pid": "Unity", "tid": 1, "ph":"M", "name": "thread_name", "args": {"name": ""} },
+{ "pid": "Unity", "tid": 1,"ts": 1.67290583539212E+15,"dur": 1205176, "ph":"X", "name": "Build player"},
+{ "pid": "Unity", "tid": 1,"ts": 1.67290583541696E+15,"dur": 330592, "ph":"X", "name": "Preprocess Player"},
+{ "pid": "Unity", "tid": 1,"ts": 1.67290583577915E+15,"dur": 4153, "ph":"X", "name": "Prepare For Build"},
+{ "pid": "Unity", "tid": 1,"ts": 1.67290583578352E+15,"dur": 772134, "ph":"X", "name": "ProducePlayerScriptAssemblies"},
+{ "pid": "Unity", "tid": 1,"ts": 1.67290583654395E+15,"dur": 11326, "ph":"X", "name": "Prebuild Cleanup and Recompile"},
+{}
+
+],
+"meta_datetime": "01/05/2023 16:03:56",
+"meta_command_line": "D:\\Unity\\file\\2021.3.13f1\\Editor\\Unity.exe -projectpath \"D:\\Unity\\workplace\\3Dtest\\githubproject\\2022-Window-Final-Project\\3D test\" -useHub -hubIPC -cloudEnvironment production -licensingIpc LicenseClient-USER -hubSessionId e6d36bd0-8ac1-11ed-b6a0-c9e3d8e48b03 -accessToken MBHD6SowrHI1ES6sydZ5OJsoCnjdi0_i-2O54bYXGzE01ef",
+"meta_command_line_args": "D:\\Unity\\file\\2021.3.13f1\\Editor\\Unity.exe -projectpath D:\\Unity\\workplace\\3Dtest\\githubproject\\2022-Window-Final-Project\\3D test -useHub -hubIPC -cloudEnvironment production -licensingIpc LicenseClient-USER -hubSessionId e6d36bd0-8ac1-11ed-b6a0-c9e3d8e48b03 -accessToken MBHD6SowrHI1ES6sydZ5OJsoCnjdi0_i-2O54bYXGzE01ef",
+"meta_user_name": "USER",
+"meta_os_version": "Microsoft Windows NT 10.0.22000.0",
+"meta_cpu_count": "16"
+}
