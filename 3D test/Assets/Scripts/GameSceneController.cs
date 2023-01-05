@@ -26,8 +26,8 @@ public class GameSceneController : MonoBehaviour
     }
     public GameObject newItemInstantiate(Transform player, string _string)
     {
-        if (!PV.IsMine)
-            return null;
+        /*if (!PV.IsMine)
+            return null;*/
         Debug.Log(_string);
         GameObject newItem ;
         newItem = GameObject.Find(_string);
@@ -36,8 +36,6 @@ public class GameSceneController : MonoBehaviour
     }
     public void sroceplus()
     {
-        if (!PV.IsMine)
-            return ;
         sroce++;
         TMP.SetText(sroce.ToString());
         if (sroce == 1)

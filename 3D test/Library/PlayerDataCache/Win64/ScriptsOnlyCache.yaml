@@ -20,6 +20,7 @@ ScriptsOnlyBuild:
     PhotonUnityNetworking.Editor.dll:
     - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
+    - Photon.Pun.PhotonHandler
     - Photon.Pun.PhotonTransformView
     - Photon.Pun.PhotonView
     - Photon.Pun.ServerSettings
@@ -170,69 +171,71 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1566}
     - Class: 114
-      Script: {instanceID: 1626}
+      Script: {instanceID: 1628}
     - Class: 114
-      Script: {instanceID: 1762}
+      Script: {instanceID: 1764}
     - Class: 114
-      Script: {instanceID: 1852}
+      Script: {instanceID: 1854}
     - Class: 114
-      Script: {instanceID: 1950}
+      Script: {instanceID: 1952}
     - Class: 114
-      Script: {instanceID: 2330}
+      Script: {instanceID: 2332}
     - Class: 114
-      Script: {instanceID: 2856}
+      Script: {instanceID: 2858}
     - Class: 114
-      Script: {instanceID: 2868}
+      Script: {instanceID: 2870}
     - Class: 114
-      Script: {instanceID: 3114}
+      Script: {instanceID: 3116}
     - Class: 114
-      Script: {instanceID: 3356}
+      Script: {instanceID: 3358}
     - Class: 114
-      Script: {instanceID: 3464}
+      Script: {instanceID: 3466}
     - Class: 114
-      Script: {instanceID: 3604}
+      Script: {instanceID: 3606}
     - Class: 114
-      Script: {instanceID: 3652}
+      Script: {instanceID: 3654}
     - Class: 114
-      Script: {instanceID: 3768}
+      Script: {instanceID: 3770}
     - Class: 114
-      Script: {instanceID: 4076}
+      Script: {instanceID: 4078}
     - Class: 114
-      Script: {instanceID: 4226}
+      Script: {instanceID: 4228}
     - Class: 114
-      Script: {instanceID: 4712}
+      Script: {instanceID: 4714}
     - Class: 114
-      Script: {instanceID: 4726}
+      Script: {instanceID: 4728}
     - Class: 114
-      Script: {instanceID: 5038}
+      Script: {instanceID: 5040}
     - Class: 114
-      Script: {instanceID: 5322}
+      Script: {instanceID: 5324}
     - Class: 114
-      Script: {instanceID: 5368}
+      Script: {instanceID: 5370}
     - Class: 114
-      Script: {instanceID: 5690}
+      Script: {instanceID: 5692}
     - Class: 114
-      Script: {instanceID: 5940}
+      Script: {instanceID: 5942}
     - Class: 114
-      Script: {instanceID: 5984}
+      Script: {instanceID: 5986}
     - Class: 114
-      Script: {instanceID: 6622}
+      Script: {instanceID: 6492}
     - Class: 114
-      Script: {instanceID: 6804}
+      Script: {instanceID: 6624}
     - Class: 114
-      Script: {instanceID: 7202}
+      Script: {instanceID: 6806}
     - Class: 114
-      Script: {instanceID: 7718}
+      Script: {instanceID: 7204}
     - Class: 114
-      Script: {instanceID: 7778}
+      Script: {instanceID: 7720}
     - Class: 114
-      Script: {instanceID: 8718}
+      Script: {instanceID: 7780}
     - Class: 114
-      Script: {instanceID: 8946}
+      Script: {instanceID: 8720}
     - Class: 114
-      Script: {instanceID: 9078}
+      Script: {instanceID: 8948}
     - Class: 114
-      Script: {instanceID: 9096}
+      Script: {instanceID: 9080}
+    - Class: 114
+      Script: {instanceID: 9098}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -299,35 +302,35 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1566}
     - Class: 114
-      Script: {instanceID: 2264}
+      Script: {instanceID: 2266}
     - Class: 114
-      Script: {instanceID: 2856}
+      Script: {instanceID: 2858}
     - Class: 114
-      Script: {instanceID: 2868}
+      Script: {instanceID: 2870}
     - Class: 114
-      Script: {instanceID: 3114}
+      Script: {instanceID: 3116}
     - Class: 114
-      Script: {instanceID: 3356}
+      Script: {instanceID: 3358}
     - Class: 114
-      Script: {instanceID: 3464}
+      Script: {instanceID: 3466}
     - Class: 114
-      Script: {instanceID: 4076}
+      Script: {instanceID: 4078}
     - Class: 114
-      Script: {instanceID: 5940}
+      Script: {instanceID: 5942}
     - Class: 114
-      Script: {instanceID: 6506}
+      Script: {instanceID: 6508}
     - Class: 114
-      Script: {instanceID: 6622}
+      Script: {instanceID: 6624}
     - Class: 114
-      Script: {instanceID: 6804}
+      Script: {instanceID: 6806}
     - Class: 114
-      Script: {instanceID: 7202}
+      Script: {instanceID: 7204}
     - Class: 114
-      Script: {instanceID: 8820}
+      Script: {instanceID: 8822}
     - Class: 114
-      Script: {instanceID: 8946}
+      Script: {instanceID: 8948}
     - Class: 114
-      Script: {instanceID: 9078}
+      Script: {instanceID: 9080}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -593,7 +596,7 @@ ScriptsOnlyBuild:
     className: Benchmark01_UGUI
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 1f3228e721a0a6f0d0068ab21b49e912
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: foodController

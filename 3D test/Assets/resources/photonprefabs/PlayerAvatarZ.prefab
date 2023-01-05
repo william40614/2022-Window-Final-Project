@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 8506491462633387889}
   - component: {fileID: 8506491462633387888}
   - component: {fileID: 8506491462633387903}
+  - component: {fileID: 254912812841475743}
   m_Layer: 0
   m_Name: PlayerAvatarZ
   m_TagString: Untagged
@@ -302,6 +303,21 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &254912812841475743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8506491462633287738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 177bddf229f8d8445a70c0652f03b7df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisconnectAfterKeepAlive: 0
+  KeepAliveInBackground: 60000
+  ApplyDontDestroyOnLoad: 1
 --- !u!1 &8506491462633287742
 GameObject:
   m_ObjectHideFlags: 0

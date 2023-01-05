@@ -118,7 +118,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
             if (isnull == true)
             {
                 dish = pickup.Finditems(transform);
-                
+                //dish.GetComponent<foodController>().controller = gameObject;
                 if(dish != null)
                 {
                     dish_tf = dish.GetComponent<Transform>();
