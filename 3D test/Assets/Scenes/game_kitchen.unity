@@ -2649,7 +2649,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2148109625774392980, guid: 1b4abc160c67f624081bafd242a34a7f, type: 3}
       propertyPath: sceneViewId
-      value: 3
+      value: 105
+      objectReference: {fileID: 0}
+    - target: {fileID: -2148109625774392980, guid: 1b4abc160c67f624081bafd242a34a7f, type: 3}
+      propertyPath: OwnershipTransfer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1195800642448385417, guid: 1b4abc160c67f624081bafd242a34a7f, type: 3}
       propertyPath: m_RootOrder
@@ -11691,6 +11695,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3073264654304998237, guid: fda1982599244754aa082794159d9323, type: 3}
       propertyPath: sceneViewId
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3073264654304998237, guid: fda1982599244754aa082794159d9323, type: 3}
+      propertyPath: OwnershipTransfer
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3073264654305031623, guid: fda1982599244754aa082794159d9323, type: 3}

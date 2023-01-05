@@ -1,4 +1,5 @@
 using Photon.Pun;
+using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,4 +15,8 @@ public class foodController : MonoBehaviour
             return;
         rb.MovePosition(rb.position);
     }
+    /*public void changeowner(Transform player)
+    {
+        PhotonView.TransferOwnership(gameObject,player.GetComponent<Player>());
+    }*/
 }

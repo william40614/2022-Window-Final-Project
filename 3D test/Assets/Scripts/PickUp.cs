@@ -49,12 +49,13 @@ public class PickUp : MonoBehaviour
                 pickup_isnull = false;
             }*/
             Transform near_box = null;
-            /*near_box = checkFoodBox(player);
-            if (near_box != null && hand > Vector3.Distance(near_box.position, player.position))
-            {
-                pickup = pickup_foodbox(player, near_box);
-                pickup_isnull = false;
-            }*/
+        /*near_box = checkFoodBox(player);
+        if (near_box != null && hand > Vector3.Distance(near_box.position, player.position))
+        {
+            pickup = pickup_foodbox(player, near_box);
+            pickup_isnull = false;
+        }*/
+        //pickup.GetComponents<foodController>().changeowner(player);
         return pickup;
     }
 
@@ -112,7 +113,6 @@ public class PickUp : MonoBehaviour
         PhotonView PV = dish.GetComponent<PhotonView>();
         if (!PV.IsMine)
         {
-            Destroy(dish.gameObject);
             return;
         }
         float hand = handlong;

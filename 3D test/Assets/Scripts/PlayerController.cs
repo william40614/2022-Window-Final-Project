@@ -149,7 +149,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
             dish_tf.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z + 2);
         }*/
         //float x = mouseSensitivity * Input.GetAxis("Mouse X");
-        
+
         cameraholder.transform.rotation = Quaternion.Euler(45, 0, 0);
         cameraholder.transform.position = transform.position + new Vector3(0, 4, -4);
     }
