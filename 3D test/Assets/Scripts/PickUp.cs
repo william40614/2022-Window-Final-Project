@@ -38,16 +38,17 @@ public class PickUp : MonoBehaviour
             }
         }
         Debug.Log(hand);
-            if (checkPot1CanPick(player) && hand > Vector3.Distance(pot1.transform.position, player.position))
+        
+        if (checkPot1CanPick(player) && hand > Vector3.Distance(pot1.transform.position, player.position))
             {
                 pickup = Pickup_Pot1(player);
                 pickup_isnull = false;
             }
-           /* else if (checkPot2CanPick(player) && hand > Vector3.Distance(pot2.transform.position, player.position))
+        if (checkPot2CanPick(player) && hand > Vector3.Distance(pot2.transform.position, player.position))
             {
                 pickup = Pickup_Pot2(player);
                 pickup_isnull = false;
-            }*/
+            }
             Transform near_box = null;
         /*near_box = checkFoodBox(player);
         if (near_box != null && hand > Vector3.Distance(near_box.position, player.position))
@@ -144,19 +145,46 @@ public class PickUp : MonoBehaviour
             }
             else if (placed.gameObject == pot2)
             {
+                if (dish.name == "Apple")
+                    dish.transform.localPosition = new Vector3((float)-3.61, (float)-3.68, (float)21.29);
+                else if (dish.name == "Lemon")
+                    dish.transform.localPosition = new Vector3((float)-1.576, (float)-3.69, (float)21.289);
+                else if (dish.name == "WaterMElon")
+                    dish.transform.localPosition = new Vector3((float)-6.77, (float)-3.53, (float)20.01);
                 pot2.GetComponent<deeppanController>().cooking_food = dish.name;
                 pot2.GetComponent<deeppanController>().cooking(1);
-                dish.transform.position = Vector3.zero;
             }
             else
                 dish.position = new Vector3(placed.position.x, placed.position.y + (float)1.2, placed.position.z);
         }
-        if (dish.name == "PW_lemonade" || dish.name == "PW_orangejuice" || dish.name == "PW_tea_cup01")
+        if (dish.name == "PW_lemonade")
         {
             if (placed !=null && (placed.gameObject.name == "table" || placed.gameObject.name == "table (1)" || placed.gameObject.name == "long_table"))
             {
                 dish.position = Vector3.zero;
                 GetComponent<GameSceneController>().sroceplus();
+            }
+        }
+        else if (dish.name == "PW_orangejuice")
+        {
+            if (placed != null && (placed.gameObject.name == "table" || placed.gameObject.name == "table (1)" || placed.gameObject.name == "long_table"))
+            {
+                dish.position = Vector3.zero;
+                for(int i = 0; i < 2; i++)
+                {
+                    GetComponent<GameSceneController>().sroceplus();
+                }               
+            }
+        }
+        else if (dish.name == "PW_tea_cup01")
+        {
+            if (placed != null && (placed.gameObject.name == "table" || placed.gameObject.name == "table (1)" || placed.gameObject.name == "long_table"))
+            {
+                dish.position = Vector3.zero;
+                for (int i = 0; i < 3; i++)
+                {
+                    GetComponent<GameSceneController>().sroceplus();
+                }
             }
         }
     }
